@@ -1,11 +1,5 @@
 #include "gui-container.hpp"
 
-Gui::Container::Container(std::initializer_list<Component>& list)
-  : m_components()
-{
-  for (auto& c : list)
-    m_components.emplace_back(std::make_shared<Component>(c));
-}
 Gui::Container const& Gui::Container::operator=(std::initializer_list<component_ptr>& list)
 {
   for (auto& c : list)
@@ -13,14 +7,13 @@ Gui::Container const& Gui::Container::operator=(std::initializer_list<component_
   return *this;
 }
 Gui::Container::Container(std::initializer_list<std::shared_ptr<Component>>& list)
-  : m_components()
 {
   Activate();
   for (auto& c : list)
     m_components.push_back(c);
 }
 
-int Gui::Container::Contains(sf::Vector2i pos)
+std::size_t Gui::Container::Contains(sf::Vector2i pos)
 {
   const std::size_t vec_size = m_components.size();
   const sf::FloatRect rect(getPosition(), m_size);
@@ -28,7 +21,8 @@ int Gui::Container::Contains(sf::Vector2i pos)
   {
     for (std::size_t i = 0; i < vec_size; ++i)
     {
-      if(m_components[i]->Contains(pos))
+      if (m_components[i]->Contains(pos))
+        return (i + 1);
     }
     return 1;
   }
