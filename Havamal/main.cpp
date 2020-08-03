@@ -2,21 +2,20 @@
 #include "AppWin.hpp"
 #include "config-loader.hpp"
 #include "gui-splashscreen.hpp"
-
+#include "Bootstrapper.h"
 int Counter()
 {
-  int i;
-  for (i = 0; i < 1000; ++i)
-  {
-    std::cout << i << '\n';
-  }
-  return i;
+
 }
 int main(int argc, char* argv[])
 {
   //Config::Loader::Get();
   //Havamal::AppWin* window = new Havamal::AppWin();
-  Gui::SplashScreen splashscreen(&Counter);
-  splashscreen.Run();
+  int i;
+  Havamal::SplashScreen<std::shared_ptr<Havamal::AppWin>> * splashscreen = new Havamal::SplashScreen<std::shared_ptr<Havamal::AppWin>>(&Havamal::Bootstrapper::Load);
+  auto window = splashscreen->Run();
+  delete splashscreen;
+  window->Initialize();
+  window->Run();
   return 0;
 }

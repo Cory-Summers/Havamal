@@ -7,6 +7,9 @@ Gui::Container const& Gui::Container::operator=(std::initializer_list<component_
   return *this;
 }
 Gui::Container::Container(std::initializer_list<std::shared_ptr<Component>>& list)
+  : m_components()
+  , m_background()
+  , m_size()
 {
   Activate();
   for (auto& c : list)
@@ -29,7 +32,7 @@ std::size_t Gui::Container::Contains(sf::Vector2i pos)
   return 0;
 }
 
-void Gui::Container::SetFill(sf::Vector2f const& size , sf::Color const& color)
+void Gui::Container::SetFill(sf::Vector2f const& size, sf::Color const& color)
 {
   m_size = size;
   m_background = std::make_unique<sf::RectangleShape>(m_size);
@@ -43,7 +46,8 @@ void Gui::Container::ClearFill()
 
 void Gui::Container::SetSize(sf::Vector2f const& size)
 {
-  m_background->setSize(size);
+  if(m_background)
+    m_background->setSize(size);
   m_size = size;
 }
 

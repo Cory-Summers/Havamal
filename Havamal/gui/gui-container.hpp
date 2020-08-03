@@ -23,7 +23,7 @@ namespace Gui {
     virtual std::size_t Contains(sf::Vector2i) override;
             void        SetFill(sf::Vector2f const&, sf::Color const&);
     virtual void        SetSize(sf::Vector2f const& size);
-    virtual sf::Vector2f Resize(sf::Vector2f) {}
+    virtual sf::Vector2f Resize(sf::Vector2f) { return { 0.f, 0.f }; }
     void ClearFill();
     virtual sf::Vector2f const& GetSize() const    { return m_size; }
     virtual std::size_t GetType() const { return static_cast<std::size_t>(ComponentID::Container); }
