@@ -18,7 +18,7 @@ namespace Havamal {
   public:
     SplashScreen(callback_type const &);
     void Initialize();
-    return_type Run();
+    return_type Execute();
     ~SplashScreen();
   private:
     void PollEvent();
@@ -119,7 +119,7 @@ inline void Havamal::SplashScreen<return_type>::UpdateLoadingBar(std::chrono::mi
   );
 }
 template<typename return_type>
-return_type Havamal::SplashScreen<return_type>::Run()
+return_type Havamal::SplashScreen<return_type>::Execute()
 {
   auto start = std::chrono::steady_clock::now();
   auto end = std::chrono::steady_clock::now();

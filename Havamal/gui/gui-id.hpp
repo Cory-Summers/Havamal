@@ -1,5 +1,5 @@
 #pragma once
-namespace Gui
+namespace Havamal::Gui
 {
   enum class ComponentID : std::size_t {
     Container,

@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 #include <SFML/Graphics.hpp>
-namespace Gui {
+namespace Havamal::Gui {
   /* Base interface for GUI classes*/
   class Component : public sf::Drawable
                   , public sf::Transformable

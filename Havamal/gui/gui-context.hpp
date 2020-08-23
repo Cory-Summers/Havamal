@@ -1,7 +1,7 @@
 #pragma once
 #include <iterator>
 #include "gui-container.hpp"
-namespace Gui {
+namespace Havamal::Gui {
   class Context : public sf::Drawable
                 , private sf::NonCopyable
   {

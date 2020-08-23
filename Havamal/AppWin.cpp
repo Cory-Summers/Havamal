@@ -4,20 +4,24 @@ Havamal::AppWin::AppWin()
   : m_window()
   , m_event()
   , m_gui_context()
+  , m_scheme("theme.json")
+  , m_clear_color(m_scheme["main_background"])
 {
 }
 
 void Havamal::AppWin::Initialize()
 {
-  m_window.create(sf::VideoMode(2560, 1440), "Havamal Editor");
+  
+  sf::Vector2u size = Config::ToVector<unsigned>(m_app_config["window"]["size"]);
+  m_window.create(sf::VideoMode(size.x, size.y), "Havamal Editor");
 }
 
-int Havamal::AppWin::Run()
+int Havamal::AppWin::Execute()
 {
   while (m_window.isOpen())
   {
     HandleEvent();
-    m_window.clear({ 17, 17, 17 });
+    m_window.clear(m_clear_color);
     m_window.draw(*m_gui_context);
     m_window.display();
   }

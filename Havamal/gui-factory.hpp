@@ -1,6 +1,8 @@
 #pragma once
 #include "gui/gui-context.hpp"
-namespace Gui {
+#include "ColorScheme.h"
+namespace Havamal { class AppWin; }
+namespace Havamal::Gui {
   class Factory
   {
   public:
@@ -8,9 +10,9 @@ namespace Gui {
       sf::Vector2f const& position,
       sf::Vector2f const& size,
       component_ptr m_parent = component_ptr(),
-      sf::Color color = sf::Color(0), 
+      ColorScheme<generic_char>* color_scheme = nullptr,
       std::initializer_list<component_ptr> elements = std::initializer_list<component_ptr>());
-    static std::shared_ptr<Context> CreateMainContext(sf::RenderWindow&);
+    static std::shared_ptr<Context> CreateMainContext(Havamal::AppWin &);
   private:
 
   };

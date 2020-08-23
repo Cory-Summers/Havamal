@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Gui {
+namespace Havamal::Gui {
 
   class Properties
   {

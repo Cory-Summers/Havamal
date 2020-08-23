@@ -7,7 +7,7 @@
 #include "gui-component.hpp"
 #include "gui-element.hpp"
 #include "sfml-util.hpp"
-namespace Gui {
+namespace Havamal::Gui {
   class Factory;
   class Container : public Component
   {
@@ -27,10 +27,12 @@ namespace Gui {
     void ClearFill();
     virtual sf::Vector2f const& GetSize() const    { return m_size; }
     virtual std::size_t GetType() const { return static_cast<std::size_t>(ComponentID::Container); }
+
   protected:
     std::vector<std::shared_ptr<Component>>   m_components;
     std::unique_ptr<sf::RectangleShape>       m_background;
     sf::Vector2f m_size;
+
   private:
     void draw(sf::RenderTarget&, sf::RenderStates) const;
   };

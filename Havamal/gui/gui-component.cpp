@@ -1,6 +1,6 @@
 #include "gui-component.hpp"
 
-sf::Transform Gui::Component::GetGlobalTransform()
+sf::Transform Havamal::Gui::Component::GetGlobalTransform()
 {
   sf::Transform global_transform = getTransform();
   auto* ptr = GetParent();

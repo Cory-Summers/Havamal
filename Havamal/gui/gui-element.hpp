@@ -1,7 +1,7 @@
 #pragma once
 #include "gui-component.hpp"
 
-namespace Gui {
+namespace Havamal::Gui {
   class Element :
     public Component
   {

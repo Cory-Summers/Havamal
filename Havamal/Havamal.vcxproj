@@ -131,6 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>F:\source\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,7 +145,7 @@
   <ItemGroup>
     <ClCompile Include="AppWin.cpp" />
     <ClCompile Include="Bootstrapper.cpp" />
-    <ClCompile Include="config-loader.cpp" />
+    <ClCompile Include="ColorScheme.cpp" />
     <ClCompile Include="FontLibarary.cpp" />
     <ClCompile Include="gui-context.cpp" />
     <ClCompile Include="gui-factory.cpp" />
@@ -154,12 +155,15 @@
     <ClCompile Include="gui\gui-element.cpp" />
     <ClCompile Include="m-utility.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Properties.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="application-settings.hpp" />
     <ClInclude Include="AppWin.hpp" />
     <ClInclude Include="Bootstrapper.h" />
-    <ClInclude Include="config-loader.hpp" />
+    <ClInclude Include="ColorScheme.h" />
+    <ClInclude Include="config-manager.hpp" />
     <ClInclude Include="FontLibarary.h" />
     <ClInclude Include="gui-factory.hpp" />
     <ClInclude Include="gui-properties.hpp" />
@@ -174,7 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="config.cfg" />
+    <None Include="app_config.json" />
+    <None Include="packages.config" />
+    <None Include="theme.json" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="bahnschrift.ttf" />
@@ -188,5 +194,12 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets" Condition="Exists('..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nlohmann.json.3.9.1\build\native\nlohmann.json.targets'))" />
+  </Target>
 </Project>

@@ -21,9 +21,6 @@
     <ClCompile Include="AppWin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="config-loader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="gui\gui-container.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,12 +51,15 @@
     <ClCompile Include="FontLibarary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorScheme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWin.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="config-loader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gui\gui-component.hpp">
@@ -98,18 +98,41 @@
     <ClInclude Include="FontLibarary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="config-manager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="application-settings.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorScheme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="config.cfg">
+    <None Include="ClassDiagram.cd">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ClassDiagram.cd" />
+    <None Include="packages.config" />
+    <None Include="app_config.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="theme.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="bahnschrift.ttf" />
-    <Font Include="fonts\segoeuisl.ttf" />
-    <Font Include="fonts\Raleway-Regular.ttf" />
-    <Font Include="fonts\Junicode.ttf" />
+    <Font Include="fonts\segoeuisl.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+    <Font Include="fonts\Raleway-Regular.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+    <Font Include="fonts\Junicode.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+    <Font Include="bahnschrift.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
   </ItemGroup>
   <ItemGroup>
     <Image Include="bg.png">
