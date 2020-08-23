@@ -143,29 +143,48 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AppWin.cpp" />
+    <ClCompile Include="Bootstrapper.cpp" />
     <ClCompile Include="config-loader.cpp" />
+    <ClCompile Include="FontLibarary.cpp" />
     <ClCompile Include="gui-context.cpp" />
     <ClCompile Include="gui-factory.cpp" />
     <ClCompile Include="GuiFactory.cpp" />
     <ClCompile Include="gui\gui-component.cpp" />
     <ClCompile Include="gui\gui-container.cpp" />
     <ClCompile Include="gui\gui-element.cpp" />
+    <ClCompile Include="m-utility.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Properties.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWin.hpp" />
+    <ClInclude Include="Bootstrapper.h" />
     <ClInclude Include="config-loader.hpp" />
+    <ClInclude Include="FontLibarary.h" />
     <ClInclude Include="gui-factory.hpp" />
+    <ClInclude Include="gui-properties.hpp" />
+    <ClInclude Include="gui-splashscreen.hpp" />
     <ClInclude Include="gui\gui-component.hpp" />
     <ClInclude Include="gui\gui-container.hpp" />
     <ClInclude Include="gui\gui-context.hpp" />
     <ClInclude Include="gui\gui-element.hpp" />
     <ClInclude Include="gui\gui-id.hpp" />
     <ClInclude Include="gui\sfml-util.hpp" />
+    <ClInclude Include="m-utility.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="config.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="bahnschrift.ttf" />
+    <Font Include="fonts\Junicode.ttf" />
+    <Font Include="fonts\Raleway-Regular.ttf" />
+    <Font Include="fonts\segoeuisl.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bg.png" />
+    <Image Include="splash.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

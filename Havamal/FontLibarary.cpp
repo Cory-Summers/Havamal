@@ -9,6 +9,7 @@ const std::string Havamal::FontLibrary::local_folder = std::string("./fonts/");
 Havamal::FontLibrary& Havamal::FontLibrary::Get()
 {
   static FontLibrary m_this = Initialize();
+  //test;
   return m_this;
 }
 

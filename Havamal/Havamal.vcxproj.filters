@@ -42,6 +42,18 @@
     <ClCompile Include="gui\gui-component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Bootstrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="m-utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FontLibarary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppWin.hpp">
@@ -71,11 +83,40 @@
     <ClInclude Include="gui\sfml-util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Bootstrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m-utility.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui-splashscreen.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui-properties.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontLibarary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="config.cfg">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="bahnschrift.ttf" />
+    <Font Include="fonts\segoeuisl.ttf" />
+    <Font Include="fonts\Raleway-Regular.ttf" />
+    <Font Include="fonts\Junicode.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="splash.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
