@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <sstream>
 #include <unordered_map>
-#include <nlohmann/json.hpp>
 #include <SFML/Graphics/Color.hpp>
+#include <nlohmann/json.hpp>
 #include "application-settings.hpp"
 namespace Havamal::Gui {
   template<typename char_type = generic_char>
